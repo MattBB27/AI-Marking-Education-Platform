@@ -4,7 +4,7 @@ An end-to-end assignment platform that lets primary school teachers create rubri
 
 Built as a capstone project for the UTS Software Development Studio (SDS) program.
 
-> *Source code and application screenshots are not shared publicly out of respect for the client engagement. This README documents the architecture, design decisions, and my contributions; happy to walk through the implementation.*
+> *Source code and application screenshots are not shared publicly out of respect for the client engagement. This README documents the architecture, design decisions, and my contributions; happy to walk through what I did.*
 
 ---
 
