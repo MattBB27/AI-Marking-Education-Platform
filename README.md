@@ -95,64 +95,6 @@ A `NORMALIZE_MARKS=true` environment flag enables post-hoc z-score normalisation
 
 Results are written back to the `studentGrade` Firestore collection with deterministic doc IDs (`${studentId}_${assignmentId}`), so re-marking is idempotent and grades remain linked to their assignment and rubric.
 
-## Project Structure
-
-```
-src/app/
-├── api/markClass/route.ts        # Two-stage AI marking endpoint
-├── page.tsx                      # Login (Firebase Auth + role routing)
-├── firebase.ts                   # Firebase client init
-├── teacher-dashboard/            # Teacher home
-├── teacher-assignments/          # Create / manage assignments
-├── teacher-rubrics/              # Per-question rubric builder
-├── teacher-grades/               # Review and edit AI-marked grades
-├── teacher-past-assignments/     # Archive view
-├── student-dashboard/            # Student home
-├── student-assignments/          # Submit answers
-├── student-grades/               # View grades and feedback
-├── classes/[id]/                 # Class detail + batch marking trigger
-└── settings/                     # User settings
-```
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (LTS) and npm
-- A Firebase project with Auth (email/password) and Firestore enabled
-- An OpenAI API key (or any compatible provider, via the `AIProvider` interface)
-
-### Setup
-
-```bash
-npm install
-```
-
-Create `.env.local` in the project root:
-
-```env
-NEXT_PUBLIC_FIREBASE_API_KEY=...
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=...
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=...
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=...
-NEXT_PUBLIC_FIREBASE_APP_ID=...
-NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=...
-
-OPENAI_API_KEY=...
-NORMALIZE_MARKS=false
-```
-
-### Run
-
-```bash
-npm run dev
-```
-
-Then open [http://localhost:3000](http://localhost:3000).
-
-Convenience launchers are included: `run.bat` (Windows) and `start.command` (macOS/Linux) handle `npm install` and `npm run dev` in one step.
-
 ## Firestore Data Model
 
 | Collection | Document shape |
